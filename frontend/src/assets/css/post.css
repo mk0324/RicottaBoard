@@ -1,0 +1,416 @@
+/* COL */
+/* COLOR */
+/* FONT */
+/*30px*/
+/*20px*/
+/*13px*/
+/* GAP */
+/* img */
+#post-write .write-header {
+  width: 100%;
+  float: left;
+  height: 64px;
+  border-bottom: 1px solid #707070;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 14px 40px;
+}
+
+#post-write .contents {
+  width: 50%;
+  float: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 40px;
+  height: calc(100vh - 64px);
+}
+
+#post-write .contents #title {
+  width: 100%;
+  float: left;
+  font-size: 1.875em;
+  border: 1px solid #CCC;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+#post-write .contents .tag-list {
+  width: 100%;
+  float: left;
+  border: 1px solid #CCC;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#post-write .contents .tag-list ul {
+  float: left;
+}
+
+#post-write .contents .tag-list ul li {
+  float: left;
+  margin-right: 5px;
+}
+
+#post-write .preview {
+  width: 50%;
+  float: right;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 40px;
+  background: #eee;
+  height: calc(100vh - 64px);
+}
+
+.post {
+  margin-left: -310px;
+}
+
+.post h2 {
+  margin-top: 80px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  font-size: 1.875em;
+}
+
+.post .user-box {
+  width: 100%;
+  float: left;
+  border: 1px solid #000;
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.post .user-box .profile-img {
+  width: 107px;
+  height: 107px;
+  border-radius: 107px;
+  border: 1px solid #000;
+  float: left;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 40px;
+}
+
+.post .user-box .user-text {
+  float: left;
+  height: 107px;
+  display: table;
+}
+
+.post .user-box .user-text strong {
+  font-size: 1.25em;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.post .user-box .btn {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+.post .post-list {
+  width: 100%;
+  float: left;
+}
+
+.post .post-list > div {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  width: 285px;
+}
+
+.post .post-list > div:nth-child(3n) {
+  margin-right: 0;
+}
+
+.post .post-list > div .post-card {
+  width: 100%;
+  float: left;
+}
+
+.post .post-list > div .post-card .post-img {
+  width: 100%;
+  float: left;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid #000;
+  height: 200px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.post .post-list > div .post-card .contents {
+  width: 100%;
+  float: left;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #000;
+  border-top: none;
+}
+
+.post .post-list > div .post-card .contents h3 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  word-wrap: normal;
+  font-size: 1em;
+  font-weight: 600;
+  height: 1.5em;
+}
+
+.post .post-list > div .post-card .contents p.content {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.813em;
+  height: 3.5em;
+}
+
+.post .post-list > div .post-card .contents span {
+  float: left;
+  font-size: 0.813em;
+}
+
+.post .post-list > div .post-card .writer-wrap {
+  width: 100%;
+  float: left;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: none;
+}
+
+.post .post-list > div .post-card .writer-wrap * {
+  font-size: 0.813em;
+  cursor: pointer;
+}
+
+.post .post-list > div .post-card .writer-wrap a {
+  float: left;
+}
+
+.post .post-list > div .post-card .writer-wrap span {
+  float: right;
+}
+
+.post.post-temporary {
+  margin-left: 0;
+}
+
+.post#post-detail h2 {
+  margin-bottom: 20px;
+}
+
+.post#post-detail .like-share {
+  float: right;
+  margin-top: -6px;
+}
+
+.post#post-detail .like-share * {
+  float: left;
+}
+
+.post#post-detail .like-share img {
+  width: 36px;
+}
+
+.post#post-detail .like-share span {
+  margin: 10px 20px 0 10px;
+}
+
+.post#post-detail .top-info {
+  width: 100%;
+  float: left;
+  margin-bottom: 80px;
+}
+
+.post#post-detail .top-info .profile-img {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 27px;
+  height: 27px;
+  float: left;
+  border-radius: 27px;
+  border: 1px solid #000;
+  margin-right: 7px;
+  margin-top: -6px;
+}
+
+.post#post-detail .bottom-info {
+  width: 100%;
+  float: left;
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
+
+.post#post-detail .bottom-info ul {
+  float: left;
+}
+
+.post#post-detail .bottom-info ul li {
+  float: left;
+  background-color: #eee;
+  border-radius: 100px;
+  border: 1px solid #000;
+  padding: 6px 20px;
+  margin-right: 10px;
+}
+
+.post#post-detail .comment {
+  width: 100%;
+  float: left;
+}
+
+.post#post-detail .comment .wrap {
+  background: #FAFAFA;
+}
+
+.post#post-detail .comment .wrap .count {
+  width: 100%;
+  float: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 30px 40px 20px 40px;
+  font-size: 1.25em;
+}
+
+.post#post-detail .comment .wrap ul {
+  width: 100%;
+  float: left;
+}
+
+.post#post-detail .comment .wrap ul li {
+  width: 100%;
+  float: left;
+  border-bottom: 1px solid #CCCCCC;
+  padding: 20px 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.post#post-detail .comment .wrap ul li:last-of-type {
+  border: none;
+}
+
+.post#post-detail .comment .wrap ul li .reply-btn {
+  float: right;
+  padding: 6px 11px;
+}
+
+.post#post-detail .comment .wrap ul li .profile {
+  float: left;
+  width: 50%;
+}
+
+.post#post-detail .comment .wrap ul li .profile .profile-img {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 53px;
+  height: 53px;
+  border-radius: 53px;
+  float: left;
+  border: 1px solid #000;
+  margin-right: 15px;
+}
+
+.post#post-detail .comment .wrap ul li .profile .date {
+  font-size: 0.813em;
+}
+
+.post#post-detail .comment .wrap ul li .message {
+  width: 100%;
+  float: left;
+  padding-left: 68px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.post#post-detail .comment .wrap ul li .delete-btn {
+  float: right;
+}
+
+.post#post-detail .comment .wrap ul .reply-list li {
+  border: none;
+  padding: 20px 0 0 0;
+}
+
+.post#post-detail .comment .wrap ul .reply-list li .bar {
+  width: 26px;
+  height: 26px;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  margin-right: 10px;
+  float: left;
+}
+
+.post#post-detail .comment .wrap ul .reply-list li .message {
+  padding-left: 107px;
+}
+
+.post#post-detail .comment .comment-write {
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #ccc;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.post#post-detail .comment .comment-write textarea {
+  width: 100%;
+  float: left;
+  height: 60px;
+  padding-bottom: 40px;
+}
+
+.post#post-detail .comment .comment-write .btn {
+  right: 20px;
+  bottom: 20px;
+  position: absolute;
+}
+
+.tag-list-wrap {
+  position: fixed;
+  left: calc(50% + 380px);
+  top: 230px;
+  width: 230px;
+}
+
+.tag-list-wrap h4 {
+  font-size: 1em;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #000;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.tag-list-wrap ul.tag-list {
+  width: 100%;
+  float: left;
+}
+
+.tag-list-wrap ul.tag-list li {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+/*# sourceMappingURL=post.css.map */

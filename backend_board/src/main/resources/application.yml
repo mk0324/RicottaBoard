@@ -1,0 +1,41 @@
+#management:
+#  endpoints:
+#    web:
+#      base-path:
+
+server:
+  port: 8081
+  servlet:
+    context-path: /
+
+
+spring:
+  profiles:
+    active: local
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+      use-new-id-generator-mappings: false
+    generate-ddl: true
+    show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: true
+
+  main:
+    allow-bean-definition-overriding: true
+
+# By default JaVers uses the same database as application does, but you can point another database
+javers:
+  newObjectSnapshot: true
+
+
+#  mongodb:
+#    host: localhost
+#    port: 27017
+#    database: board
+#    authentication-database: admin
+#    username: javers-username
+#    password: password

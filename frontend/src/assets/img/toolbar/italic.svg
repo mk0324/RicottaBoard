@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 22 37">
+      <image width="22" height="37" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAlCAYAAABGWhk4AAAAAXNSR0IArs4c6QAAAWVJREFUSA3NlM1RxDAMhcPPgRspQZw4siWkBOiAkiiFEkwHW4LpYDuApyFre5UXW/EuA57RWHqWPiuOk6uhPr7qy6urD6srWBCYgrfaATWuMSLrGbaHsU0U9AabYF1jhyoGfu2imSILjmY9hdfJazvasR3BCsd4C1iORcW8L/wTdwuYdfy/wXLyrMPwifhgtK7Q3ohQo3jPeCKQi4CFgCPRkuTtWFJFdlZvRE5pewEp9ozbVY4MffsluNmt5yhGQO/N5tHEi9AD3i2qfn6hRM5SLzhkBPd6wZHjsuoBS05PXkzeGU55G9QPHlarYyGQ5lXTmhaY3YhINltIPeBf6/giYDHP+Dc/97KJ2hlPZeLsB6JRqQYWUhGJRqUauPuq0Z0KUd++/eqK5T5Xu7VQjc8erFsFT17yzZyoBQLT+R32CGPjBeLdvCCY4+zTSaCyx/ZoFKjiLUxg+kVFWGuMSHiakz5qyd9LeXPbAU+N1AAAAABJRU5ErkJggg=="/>
+    </pattern>
+  </defs>
+  <g id="그룹_250" data-name="그룹 250" transform="translate(-281 -223)">
+    <rect id="이미지_1" data-name="이미지 1" width="7" height="12" transform="translate(289 228)" fill="url(#pattern)"/>
+    <rect id="사각형_68" data-name="사각형 68" width="22" height="22" transform="translate(281 223)" fill="rgba(255,255,255,0)"/>
+  </g>
+</svg>

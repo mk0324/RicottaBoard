@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="./css/common.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 11px;
+}
+.chat_list_wrap {
+  list-style: none;
+}
+.chat_list_wrap .header {
+  font-size: 14px;
+  padding: 15px 0;
+  background: #F18C7E;
+  color: white;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+.chat_list_wrap .search {
+  background: #eee;
+  padding: 5px;
+}
+.chat_list_wrap .search input[type="text"] {
+  width: 100%;
+  border-radius: 4px;
+  padding: 5px 0;
+  border: 0;
+  text-align: center;
+}
+.chat_list_wrap .list {
+  padding: 0 16px;
+}
+.chat_list_wrap .list ul {
+  width: 100%;
+  list-style: none;
+  margin-top: 3px;
+}
+.chat_list_wrap .list ul li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.chat_list_wrap .list ul li table {
+  width: 100%;
+}
+.chat_list_wrap .list ul li table td.profile_td {
+  width: 50px;
+  padding-right: 11px;
+}
+.chat_list_wrap .list ul li table td.profile_td img {
+  width: 50px;
+  height: auto;
+}
+.chat_list_wrap .list ul li table td.chat_td .email {
+  font-size: 12px;
+  font-weight: bold;
+}
+.chat_list_wrap .list ul li table td.time_td {
+  width: 90px;
+  text-align: center;
+}
+.chat_list_wrap .list ul li table td.time_td .time {
+  padding-bottom: 4px;
+}
+.chat_list_wrap .list ul li table td.time_td .check p {
+  width: 5px;
+  height: 5px;
+  margin: 0 auto;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #e51c23;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div style="position: absolute; right: 0px; bottom: 0px;">
+    <button id="closeChat" onclick="doDisplay()">닫기</button>
+    <button id="openChat" onclick="doDisplay()">열기</button>
+
+    <div id="chat" class="chat_list_wrap">
+        <div class="header">
+        KKOTKKIO
+        </div>
+        
+        <div class="list">
+        <ul>
+        <li>
+        <table cellpadding="0" cellspacing="0">
+        <tr>
+        <td class="profile_td">
+        <!--Img-->
+        <img src="./images/profile_preview.png" />
+        </td>
+        <td class="chat_td">
+        <!--Email & Preview-->
+        <div class="email">
+        kkotkkio@gmail.com
+        </div>
+        <div class="chat_preview">
+        안녕하세요~
+        </div>
+        </td>
+        <td class="time_td">
+        <!--Time & Check-->
+        <div class="time">
+        2016.09.29 17:54
+        </div>
+        <div class="check">
+        <p> </p>
+        </div>
+        </td>
+        </tr>
+        </table>
+        </li>
+        <li>
+        <table cellpadding="0" cellspacing="0">
+        <tr>
+        <td class="profile_td">
+        <!--Img-->
+        <img src="./images/profile_preview.png" />
+        </td>
+        <td class="chat_td">
+        <!--Email & Preview-->
+        <div class="email">
+        kkotkkio@gmail.com
+        </div>
+        <div class="chat_preview">
+        안녕하세요~
+        </div>
+        </td>
+        <td class="time_td">
+        <!--Time & Check-->
+        <div class="time">
+        2016.09.29 17:54
+        </div>
+        <div class="check">
+        
+        </div>
+        </td>
+        </tr>
+        </table>
+        </li>
+        </ul>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="이메일/아이피 검색" />
+            </div>
+        </div>
+</div>
+
+
+
+</body>
+
+<script>
+    function doDisplay(){
+        var con = document.getElementById("chat");
+        if(con.style.display=='none'){
+            con.style.display='block';
+        }else{
+            con.style.display='none';
+        }
+    }
+
+
+</script>
+</html>

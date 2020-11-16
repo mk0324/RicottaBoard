@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    /* background-image: url('../images/background.jpg'); */
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  .chat-container {
+    
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    transition: width 0.3s ease;
+    position: absolute;
+    
+    left: 75%;
+    width: 25%;
+    top: 23%;
+  }
+  
+  .chat-header {
+    background-color: white;
+    padding: 30px 8px 8px 8px;
+  }
+  
+  .chat-header .header-btn {
+    border-radius: 50%;
+    border: none;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    padding: 0;
+  }
+  
+  .chat-header #close {
+    background-color: #ff6059;
+    left: 8px;
+  }
+  
+  .chat-header #minimize {
+    background-color: #ffbf2f;
+    left: 26px;
+  }
+  
+  .chat-header #maximize {
+    background-color: #29cd42;
+    left: 44px;
+  }
+  
+  .chat-header #profile-pic {
+    vertical-align: middle;
+    border-radius: 50%;
+    width: 5%;
+    height: 5%;
+  }
+  
+  .chat-header #username {
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 5px;
+    color: #343434;
+  }
+  
+  /* chat box */
+  
+  .chatbox {
+    height: 400px;
+    background-color: #d7e4f2;
+    padding: 10px;
+    overflow-y: scroll;
+    position: relative;
+  }
+  
+  .bubble {
+    margin: 5px 0;
+    display: inline-block;
+    max-width: 300px;
+    font-size: 14px;
+    position: relative;
+  }
+  
+  .inout-bubble {
+    background-color:lightslategray;
+    border-radius: 14px 14px 14px 14px;
+    padding: 7px 50px 7px 50px;
+    float: left;
+    clear: both;
+
+    margin: 5px 0;
+    max-width: 300px;
+    font-size: 14px;
+    position: relative;
+  }
+
+  .friend-bubble {
+    background-color: white;
+    border-radius: 14px 14px 14px 0;
+    padding: 7px 15px 7px 15px;
+    float: left;
+    clear: both;
+  }
+  
+  .my-bubble {
+    background-color: #fff46d;
+    border-radius: 14px 14px 0px 14px;
+    padding: 7px 15px 7px 15px;
+    float: right;
+    clear: both;
+  }
+  
+  /* text box */
+  
+  .text-box {
+    background-color: #fafafa;
+    padding: 10px;
+  }
+  
+  .text-box textarea {
+    height: 60px;
+    float: left;
+    width: calc(100% - 70px);
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: solid 0.5px #d7d7d7;
+    resize: none;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  #sendChat {
+    background-color: orange;
+    width: 60px;
+    height: 60px;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 10px;
+    float: left;
+  }
+  
+  .clearfix {
+    clear: both;
+  }
+      </style>
+    </head>
+    <body>
+      <div class="chat-container" id="chatContainer">
+        <div class="chat-header" id="chatHeader">
+          <!-- <button id="close" class="header-btn"></button> -->
+          <button id="minimize" class="header-btn"></button>
+          <button id="maximize" class="header-btn"></button>
+    
+          <!-- <img id="profile-pic" v-bind:src="picture.jpg" > -->
+          <!-- <img id="profile-pic" v-bind:src="picutre.jpg" width="50" height="50"> -->
+          <img id="profile-pic" src='../../assets/img/picture.jpg' width="1">
+          <span id="username">나</span>
+        </div>
+    
+        <div class="chatbox" id="chatBox">
+          <div class="friend-bubble bubble">
+            매너 채팅 해주세요 :)
+          </div>
+        </div>
+    
+        <form>
+        <div class="text-box" id="textBox">
+          <textarea id="msgForm" placeholder="메시지를 입력해주세요 :)" @keyup="enter" ></textarea>
+          <button id="sendChat" @click=sendChat>전송</button>
+          <div class="clearfix"></div>
+        </div>
+        </form>
+      </div>
+    </body>
+    <script>
+      var chatcontainer = document.getElementById("chatContainer");
+      var chatheader = document.getElementById("chatHeader");
+      var chatbox = document.getElementById("chatBox");
+      var textbox = document.getElementById("textBox");
+
+      $("#minimize").click(function(){
+        chatbox.style.display = 'none';
+        textbox.style.display = 'none';
+        chatcontainer.style.top = '90%';
+        //alert("최소화");
+      });
+
+      $("#maximize").click(function(){
+        chatbox.style.display = 'block';
+        textbox.style.display = 'block';
+        chatcontainer.style.top = '23%';
+      })
+
+    </script>
+  </html>

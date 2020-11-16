@@ -1,0 +1,81 @@
+<style type="text/css">
+.button__a {
+
+    border-radius: 4px;
+    color: firebrick;
+    display: block;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.1;
+    padding: 14px 18px;
+    text-decoration: none;
+    text-transform: none;
+    border: 0;
+
+}
+
+.headlineContent {
+    background-color: #0D875C;
+    /* padding: 1vh; */
+    border-radius: 0%;
+    /* height: 10vh; */
+    padding: 1px 5%;
+    color: #F5F5EC;
+
+}
+
+
+
+.bodyContent {
+    background-color: #F5F5EC;
+    /* padding: 50px; */
+    margin: 50px 30px;
+    /* padding: 5%; */
+    /* width: 300px; */
+    border-radius: 5%;
+}
+
+.innerContent {
+    /* margin: 5%; */
+    padding: 10%;
+}
+
+.innerContent>h2 {
+    /* color: red; */
+    margin: 0% 0% 10% 0%;
+}
+
+.mainText {
+    font-size: 15px;
+    margin-bottom: 10%;
+}
+
+.buttonHere {
+    margin-bottom: 10%;
+}
+
+.temp_body {
+    font-weight: 200;
+    padding: 5%;
+    font-family: "spoqa han sans";
+    background-color: rgb(233, 233, 233);
+    font-size: 20px;
+    width: 500px;
+}
+
+
+.footer {
+    color: #2b3549;
+    text-align: center;
+    /* font-style: ; */
+    padding: 0% 0%;
+}
+
+
+.footer p {
+    margin: 0;
+    font-size: 15px;
+    color: rgb(36, 36, 36);
+}
+</style>

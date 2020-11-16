@@ -1,0 +1,353 @@
+@charset "utf-8";
+@import "./common";
+
+#post-write {
+    .write-header {
+        @include wrap;
+        height:64px;
+        border-bottom:1px solid #707070;
+        box-sizing: border-box;
+        padding:14px 40px;
+    }
+    .contents {
+        width:50%;
+        float:left;
+        box-sizing: border-box;
+        padding:40px;
+        height:calc(100vh - 64px);
+        .editor {
+            @include wrap;
+            border:1px solid #ccc;
+            textarea {
+                @include wrap;
+                box-sizing: border-box;
+                padding:20px;
+                height:500px;
+                height: calc(100vh - 360px);
+                overflow: auto;
+            }
+            .toolbar {
+                @include wrap;
+                background: #eee;
+                padding:10px 10px;
+                box-sizing: border-box;
+                ul {
+                    @include wrap;
+                    li {
+                        float:left;
+                        &.division {
+                            border-right:1px solid #999;
+                            margin-right:5px;
+                            button {margin-right:5px}
+                        }
+                        button {
+                            padding:5px 6px 0;
+                        }
+                    }
+                }
+            }
+        }
+        #title {
+            @include wrap;
+            font-size:$font-size__1;
+            border:1px solid #CCC;
+            box-sizing: border-box;
+            padding:20px;
+            margin-bottom:10px;
+        }
+        .tag-list {
+            @include wrap;
+            border:1px solid #CCC;
+            box-sizing: border-box;
+            padding:20px;
+            margin-top:10px;
+            height:70px;
+            ul {
+                float:left;
+                li {
+                    float:left;
+                    margin-right:5px;
+                    cursor:pointer;
+                }
+            }
+            input {
+
+            }
+        }
+    }
+    .preview {
+        width:50%;
+        float:right;
+        box-sizing: border-box;
+        padding:40px;
+        background:#eee;
+        height:calc(100vh - 64px);
+        overflow: auto;
+        white-space: pre;
+        p, h1, h2, h3, h4 {
+            @include wrap;
+        }
+    }
+}
+
+.post {
+    margin-left:-310px;
+    h2 {
+        margin-top:80px;
+        font-weight:$f600;
+        margin-bottom:40px;
+        font-size:$font-size__1;
+    }
+    .user-box {
+        @include wrap;
+        border:1px solid #000;
+        padding:30px;
+        box-sizing: border-box;
+        margin-bottom:80px;
+        position:relative;
+        .profile-img {
+            width:107px;
+            height:107px;
+            border-radius:107px;
+            border:1px solid #000;
+            float:left;
+            @include background-img;
+            margin-right:40px;
+        }
+        .user-text {
+            float:left;
+            height:107px;
+            display: table;
+            strong {
+                font-size:$font-size__2;
+                margin-bottom:10px;
+                display:block;
+            }
+        }
+        .btn {
+            position:absolute;
+            right:30px;
+            bottom:30px;
+        }
+    }
+    .post-list {
+        @include wrap;
+        > div {
+            float:left;
+            margin-right:30px;
+            margin-bottom:30px;
+            width:285px;
+            &:nth-child(3n) {
+                margin-right:0;
+            }
+            .post-card {
+                @include wrap;
+                text-align: left;
+                .post-img {
+                    @include wrap;
+                    @include background-img;
+                    border:1px solid #000;
+                    height:200px;
+                    box-sizing: border-box;
+                }
+                .contents {
+                    @include wrap;
+                    padding:20px;
+                    box-sizing: border-box;
+                    border:1px solid #000;
+                    border-top:none;
+                    h3 {
+                        @include ellipsis;
+                        font-size:1em;
+                        font-weight:$f600;
+                        height:1.5em;
+                    }
+                    p.content {
+                        @include ellipsisMulti(2);
+                        font-size:$font-size__3;
+                        height:3.5em;
+                    }
+                    span {
+                        float:left;
+                        font-size:$font-size__3;
+                    }
+                }
+                .writer-wrap {
+                    @include wrap;
+                    padding:10px 20px;
+                    border:1px solid #000;
+                    box-sizing: border-box;
+                    border-top:none;
+                    * {
+                        font-size:$font-size__3;
+                        cursor:pointer;
+                    }
+                    a {
+                        float:left;
+                    }
+                    span {
+                        float:right;
+                    }
+                }
+            }
+        }
+    }
+    &.post-temporary {
+        margin-left:0;
+    }
+    &#post-detail {
+        h2 {margin-bottom:20px;}
+        .like-share {
+            float:right;
+            margin-top:-6px;
+            * {
+                float:left;
+            }
+            img {
+                width:36px;
+            }
+            span {
+                margin:10px 20px 0 10px;
+            }
+        }
+        .top-info {
+            @include wrap;
+            margin-bottom:80px;
+            .profile-img {
+                @include background-img;
+                width:27px; 
+                height:27px;
+                float:left;
+                border-radius: 27px;
+                border:1px solid #000;
+                margin-right:7px;
+                margin-top:-6px;
+            }
+        }
+        .bottom-info {
+            @include wrap;
+            margin-top:60px;
+            margin-bottom:80px;
+            ul {
+                float:left;
+                li {
+                    float:left;
+                    background-color: #eee;
+                    border-radius: 100px;
+                    border:1px solid #000;
+                    padding:6px 20px;
+                    margin-right:10px;
+                }
+            }
+        }
+        .comment {
+            @include wrap;
+            .wrap {
+                background:#FAFAFA;
+                .count {
+                    @include wrap;
+                    box-sizing: border-box;
+                    padding:30px 40px 20px 40px;
+                    font-size:$font-size__2;
+                }
+                ul {
+                    @include wrap;
+                    li {
+                        @include wrap;
+                        border-bottom:1px solid #CCCCCC;
+                        padding:20px 40px;
+                        box-sizing: border-box;
+                        &:last-of-type {border:none}
+                        .reply-btn {
+                            float:right;
+                            padding:6px 11px;
+                        }
+                        .profile {
+                            float:left;
+                            width:50%;
+                            .profile-img {
+                                @include background-img;
+                                width:53px;
+                                height:53px;
+                                border-radius: 53px;
+                                float:left;
+                                border:1px solid #000;
+                                margin-right:15px;
+                            }
+                            .date {
+                                font-size:$font-size__3;
+                            }
+                        }
+                        .message {
+                            @include wrap;
+                            padding-left:68px;
+                            box-sizing: border-box;   
+                        }
+                        .delete-btn {
+                            float:right;
+                        }
+                    }
+                    .reply-list {
+                        li {
+                            border:none;
+                            padding:20px 0 0 0;
+                            .bar {
+                                width:26px;
+                                height:26px;
+                                border-bottom:1px solid #000;
+                                border-left:1px solid #000;
+                                margin-right:10px;
+                                float:left;
+                            }
+                            .message {
+                                padding-left:107px;
+                            }
+                        }
+                    }
+                }
+            }
+            .comment-write {
+                @include wrap;
+                margin-top:20px;
+                padding:20px;
+                box-sizing: border-box;
+                border:1px solid #ccc;
+                margin-bottom:100px;
+                position:relative;
+                textarea {
+                    @include wrap;
+                    height:60px;
+                    padding-bottom:40px;
+                }
+                .btn {
+                    right:20px;
+                    bottom:20px;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+.tag-list-wrap {
+    position: fixed;
+    // left:calc(50% + 380px);
+    top:230px; 
+    width:230px;
+    h4 {
+        font-size:1em;
+        padding-bottom:5px;
+        border-bottom:1px solid #000;
+        margin-bottom:20px;
+        font-weight:$f600;
+    }
+    ul.tag-list {
+        @include wrap;
+        text-align: left;
+        li {
+            cursor:pointer;
+            margin-bottom:15px;
+           
+        }
+    }
+}

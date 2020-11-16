@@ -1,0 +1,214 @@
+@charset "utf-8";
+@import './common';
+
+.user {
+    height: 100vh;
+    h1 {
+        font-size:$font-size__2;
+        text-align: center;
+        font-weight:$f600;
+        margin-bottom:20px;
+    }
+    .wrapC {
+         width:300px;
+        margin:0 auto;
+    }
+    .input-wrap {
+        @include wrap;
+        margin-bottom:10px;
+        position: relative;
+        input {
+            @include wrap;
+            border:1px solid #dadada;
+            padding: 7px 15px;
+            box-sizing: border-box;
+        }
+        &.password-wrap {
+            input {
+                padding-right:30px;
+            }
+        }
+        span {
+            position:absolute;
+            right: 9px;
+            top: 11px;
+            opacity: .3;
+            &.active {
+                opacity: 1;
+            }
+        }
+        .error-text {
+            @include wrap;
+            margin-top:5px;
+        }
+    }
+
+    .Info {
+        float: right;
+        
+    }
+    .middle {
+        width: inherit;
+    }
+    
+
+    .btn {
+        @include wrap;
+        border-radius: 0;
+        background-color: #000;
+        color:#fff
+    }
+
+    .myBox{
+        margin:0 auto;
+        // width: 60vw;
+    }
+
+    .form-wrap{
+        margin-top: 5%;
+    }
+    #container{
+        background-color:"#f2f2f2";
+    }
+}  
+.headBox{
+    width: 40vw;
+    text-align: right;
+}
+.headBox > button{
+    margin-right: 10%;
+    margin-left: 10%;
+}
+.info-wrap{
+    display: flex;
+    line-height: normal;
+    margin: 10% 0%;
+  }
+// 로그인 페이지
+#login {
+    .sns-login {
+        @include wrap;
+        margin: 20px 0;
+        > div {
+            float: right;
+            margin-left: 10px;
+            img {
+                width: 55px;
+                height: 55px;
+                border-radius: 55px;
+            }
+        }   
+    }
+    .add-option {
+        @include wrap;
+        p {
+            float:left;
+            color:#aaa;
+        }
+        a {
+            float:right;
+            margin-top:4px;
+        }
+    }
+}
+
+#join {
+    .btn {
+        margin-top:20px;
+    }
+    .go-term {
+        float:right;
+        opacity: .9;
+        cursor:pointer;
+    }
+    #terms {
+        @include wrap;
+        height:100%;
+        position:fixed;
+        left:0;
+        top:0;
+        background: #fff;;
+    }
+}
+
+// 설정 페이지
+#setting {
+    > div {
+        margin-top:80px; 
+        h2 { 
+            margin-bottom: 40px;
+        }
+        h3 {
+            font-size: $font-size__2;
+            font-weight: $f600; 
+            border-bottom: 1px solid #000;
+            margin-bottom:35px;
+            padding-bottom: 5px;
+        }
+        .setting-form {
+            @include wrap;
+            margin-bottom:30px;
+            .left {
+                width:140px;
+                text-align: center;
+                .profile-img {
+                    @include background-img;
+                    width:140px;
+                    height:140px;
+                    border-radius: 140px;
+                    border:1px solid #000;
+                    margin-bottom:20px;
+                }
+                #profile-img {
+                    display: none;
+                }
+                .btn {
+                    margin-top:20px;
+                    padding:5px 15px;
+                    cursor:pointer;
+                }
+
+            }
+            .right {
+                width:570px;
+                label {
+                    font-weight: $f600;
+                    @include wrap;
+                    margin-bottom:10px;
+                }
+                .email, input, textarea {
+                    @include wrap;
+                    margin-bottom:20px;
+                    box-sizing: border-box;
+                }
+                input, textarea {
+                    border:1px solid #ccc;
+                    padding:15px 20px;
+                }
+            }
+        }
+        .btn-wrap {
+            @include wrap;
+            position: relative; 
+            .save-btn {
+                padding:15px 90px; 
+                display: block;
+                margin:0 auto;
+            }
+            .secession-btn {
+                position: absolute;
+                color:#666;
+                right:0;
+                top:15px;
+            }
+        }
+    }
+    
+}
+
+
+/* Setting Modal CSS*/
+
+
+
+

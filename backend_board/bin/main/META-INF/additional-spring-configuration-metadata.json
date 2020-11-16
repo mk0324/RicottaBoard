@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "spring.jpa.hibernate.format-sql",
+      "type": "java.lang.String",
+      "description": "Description for spring.jpa.hibernate.format-sql."
+  }
+] }
