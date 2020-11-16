@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/* COL */
+$c100: 100%;
+$h100: 100%;
+
+/* COLOR */
+$ssafy: #E12304;
+
+/* FONT */
+$font-size__1: 1.875em; /*30px*/
+$font-size__2: 1.25em; /*20px*/
+$font-size__3: .813em; /*13px*/
+
+$f100: 100;
+$f200: 200;
+$f300: 300; 
+$f400: 400;
+$f500: 500;
+$f600: 600;
+$f700: 700;
+$f900: 900;
+
+@mixin bold {
+  font-weight: $f600;
+  transform: rotate(.1deg);
+}
+
+@mixin wrap {
+  width: 100%;
+  float: left;
+}
+
+/* GAP */
+@mixin div {
+  width: 100%;
+  float: left;
+  height: 1px;
+}
+
+/* img */
+@mixin background-img {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  word-wrap:normal;
+}
+
+@mixin ellipsisMulti($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

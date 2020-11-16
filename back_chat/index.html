@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Socket.io Chat Example</title>
+    <style>
+        .modal {
+            border: 1px solid;
+            display: none;
+            z-index: 1000;
+            left: 250px;
+            height: 150px;
+            background-color: #fff;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <button onclick="notify('asd')">전송</button> -->
+
+    <div class="container">
+        <h3>Socket.io Chat</h3>
+        
+        
+        <div id="chatLogs" style="height:500px; overflow:auto"></div>
+        
+        
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="msgForm">Message: </label>
+                <input type="tet" placeholder="메시지를 입력해주세요 :)" class="form-control" id="msgForm">
+                <input type="text" placeholder="귓말 대상(name)" class="form-control" id="other">
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="notify()">Send</button>
+
+            <!--화상채팅방 이동-->
+            <div id="ex1" class="modal" style="text-align:center";>
+                <label for="roomName">방 이름</label>
+                <input type="text" placeholder="입력해주세요 :)" class="form-control" id="roomName">
+                <button class="btn btn-primary" rel="modal:close" onclick="camPage()">생성</button>
+                <button href="#" class="btn btn-danger" rel="modal:close">닫기</button>
+            </div>
+
+            <!--접속자 목록-->
+            <div id="ex2" class="modal" style="text-align:center";>
+                <label for="roomName">접속자</label>
+                <br>
+                
+                <div id=USERS></div>
+                
+                <br>
+                <button href="#" class="btn btn-danger" rel="modal:close">닫기</button>
+            </div>
+
+            <a class="btn btn-danger" href="#ex1" rel="modal:open">화상채팅</a>
+            <!-- <a class="btn btn-success" href="#ex2" rel="modal:open" onclick="getUser()">접속자</a>
+            <a id="now_user_cnt">접속자 수</a> -->
+        </form>
+    
+
+            <div style="border:1px solid; left:230px">
+                <div>접속자</div>
+                <span id="AAA"></span>
+            </div>
+        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="./socket.io/socket.io.js"></script>
+    <script>
+        var divdiv = document.getElementById("chatLogs");
+        console.log(getParameterByName('userName'));
+        // var userName = getParameterByName('userName');
+
+        var str = "";
+        var $msgForm = $("#msgForm");
+        var $other = $("#other");
+        var Myname = getParameterByName('userName');
+
+        setInterval(function(){
+            var list = str.split(" ");
+            var listStr = "";
+            console.log(list);
+            for(var i=0; i<list.length-1; i++){
+            if(list[i] == list[i+1]) continue;
+            listStr += list[i]+" ";
+            }
+            document.getElementById("AAA").innerHTML=listStr;
+        
+        },1000);
+
+
+      
+        $(function(){
+
+        
+            // userList.push("김동률");
+            // console.log(userList);
+            // userList.splice(userList.indexOf("김동률"));
+            // console.log(userList);
+
+            // socket.io 서버에 접속한다
+            // var socket_port = io.connect('http://k3a204.p.ssafy.io:3030');
+            var socket = io('https://k3a204.p.ssafy.io/api/chat');
+            // console.log(socket_port);
+            console.log(socket);
+
+        socket.on("sendList", function(data){
+                console.log(data);
+                // var ab = document.getElementById("clientList");
+                
+                
+                for(var i in data){
+                    str += data[i].nickname+" ";
+                }
+                console.log("str : "+str);
+
+                // document.getElementById("AAA").innerHTML=str;
+        });
+        socket.on("deleteUser", function(data){
+            console.log("deleteUser : "+data);
+            var temp = str.split(" ");
+            str = "";
+            for(var i in temp){
+                // if(temp[i] === data) {
+                //     temp.splice(i, 1);   
+                //     console.log(temp);
+                // }
+                if(temp[i] === data) continue;
+                str += temp[i] + " ";
+            }
+        });
+
+            // 서버로 자신의 정보를 전송한다.
+            // var Myname = getParameterByName('userName');
+
+            socket.emit("login", {
+                name: Myname,
+                socketid: '',
+                // name: "Dongryul3",
+                userid: "ungmo2@gmail.com"
+            });
+
+
+
+            // 서버로부터의 메시지가 수신되면
+            socket.on("login", function(data) {
+                $("#chatLogs").append("<div><strong>" + data.name + "</strong> has joined</div>");
+                //$("#chatLogs").append("<div><strong>" + data.socketid + "</strong></div>");
+                // // 유저리스트 추가
+                str += data.name+" ";
+
+                // socket.emit('enter', {
+                //     name: data.name,
+                //     socketid: '',
+                //     userid: "ruylruyl@naver.com"
+                // });
+            });
+
+
+            // 서버로부터의 메시지가 수신되면
+
+            socket.on("s2c_chat", function(data) {
+
+                $("#chatLogs").append("<div>" + data.msg + " : from <strong>" + data.from.name + "</strong></div>");
+                console.log("data.id : "+data.id);
+                console.log("data.myid : "+data.myid);
+                console.log("data.from.name : "+data.from.name);
+                console.log("data.to.name : " +data.to.name);
+                console.log("myName : "+Myname);
+                console.log("yourname : "+data.yourname);
+
+                if(data.id == '') {
+                    $("#chatLogs").append("<div>" + data.from.name + " : " + data.msg + "</div>");
+                }
+                else if(Myname != data.to.name) $("#chatLogs").append("<div style='color:#0000ff'>(" + data.to.name + "님에게) " + data.msg + "</div>");
+                else  $("#chatLogs").append("<div style='color:blue'>(" + data.from.name + "님으로부터) " + data.msg + "</div>");
+
+            });
+
+
+            socket.on("out", function(data) {
+                //$("#chatLogs").append("<div>" + data.msg + " : from <strong>" + data.from.name + "</strong></div>");
+
+                $("#chatLogs").append("<div>"+data.from.name+"님이 나가셨습니다.</div>");
+
+            });
+
+
+
+
+            function makeRandomName(){
+                var name = "";
+                var possible = "abcdefghijklmnopqrstuvwxyz";
+                for( var i = 0; i < 3; i++ ) {
+                    name += possible.charAt(Math.floor(Math.random() * possible.length));
+                }
+                return name;
+                // var name = 1;
+                // return name + Math.random()*10;
+            }
+
+            // Send 버튼이 클릭되면
+            $("form").submit(function(e) {
+                e.preventDefault();
+                // var $msgForm = $("#msgForm");
+                // var $other = $("#other");
+
+
+                if($other.val() == ''){
+                    // 서버로 메시지를 전송한다.
+                    socket.emit("chat", { msg: $msgForm.val() });
+                    $msgForm.val("");
+                }
+                else{
+                    console.log('귓속말 대상 : '+$other.val());
+                    socket.emit("chatto", { msg: $msgForm.val(), id: $other.val() });
+                    $msgForm.val("");
+                }
+
+                //$('#chatLogs').scrollTop($('#chatLogs').prop('scrollHeight'));
+
+                setTimeout(function(){
+                    $('#chatLogs').scrollTop($('#chatLogs').prop('scrollHeight'));
+                }, 300);
+            });
+        });
+
+
+        function camPage(){
+            var $RoomName = $("#roomName");
+            var RN = $RoomName.val();
+            location.href = "cam?roomName="+RN;
+    }
+
+    function getUser(){
+        console.log("getUser() : "+userList);
+        var users = document.getElementById("USERS");
+        users.innerText = userList;
+
+    }
+
+    function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+
+
+
+        ////////////// 메시지 알림 부분
+
+        var permission = Notification.requestPermission();
+        console.log("## PERMISSION : " +permission);
+        // var permission = "granted";
+        
+        function getNotificationPermission() {
+            // 브라우저 지원 여부 체크
+            if (!("Notification" in window)) {
+                alert("데스크톱 알림을 지원하지 않는 브라우저입니다.");
+            }
+            // 데스크탑 알림 권한 요청
+            Notification.requestPermission(function (result) {
+                // 권한 거절
+                if(result == 'denied') {
+                    alert('알림을 차단하셨습니다.\n브라우저의 사이트 설정에서 변경하실 수 있습니다.');
+                    return false;
+                }
+            });
+        }
+
+                // 알림 띄우기
+        function notify(msg) {
+            var options = {
+                body: msg
+            }
+            
+            // 데스크탑 알림 요청
+            var notification = new Notification(Myname+" : "+$msgForm.val(), options);
+            
+            // 3초뒤 알람 닫기
+            setTimeout(function(){
+                notification.close();
+            }, 3000);
+        }
+
+
+</script>
+
+
+</body>
+
+
+<!--(화상채팅) 모달 부분-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<link rel="stylesheet" href="//unpkg.com/bootstrap@4/dist/css/bootstrap.min.css">
+<script src='//unpkg.com/jquery@3/dist/jquery.min.js'></script>
+<script src='//unpkg.com/popper.js@1/dist/umd/popper.min.js'></script>
+<script src='//unpkg.com/bootstrap@4/dist/js/bootstrap.min.js'></script>
+
+
+</html>

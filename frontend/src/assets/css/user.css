@@ -1,0 +1,215 @@
+/* COL */
+/* COLOR */
+/* FONT */
+/*30px*/
+/*20px*/
+/* GAP */
+/* img */
+.user {
+  height: 100vh;
+}
+
+.user h1 {
+  font-size: 1.25em;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.user .wrapC {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.user .input-wrap {
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.user .input-wrap input {
+  width: 100%;
+  float: left;
+  border: 1px solid #000;
+  padding: 7px 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.user .input-wrap.password-wrap input {
+  padding-right: 30px;
+}
+
+.user .input-wrap span {
+  position: absolute;
+  right: 9px;
+  top: 11px;
+  opacity: .3;
+}
+
+.user .input-wrap span.active {
+  opacity: 1;
+}
+
+.user .input-wrap .error-text {
+  width: 100%;
+  float: left;
+  margin-top: 5px;
+}
+
+.user .btn {
+  width: 100%;
+  float: left;
+  border-radius: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+#login .sns-login {
+  width: 100%;
+  float: left;
+  margin: 20px 0;
+}
+
+#login .sns-login > div {
+  float: right;
+  margin-left: 10px;
+}
+
+#login .sns-login > div img {
+  width: 55px;
+  height: 55px;
+  border-radius: 55px;
+}
+
+#login .add-option {
+  width: 100%;
+  float: left;
+}
+
+#login .add-option p {
+  float: left;
+  color: #aaa;
+}
+
+#login .add-option a {
+  float: right;
+  margin-top: 4px;
+}
+
+#join .btn {
+  margin-top: 20px;
+}
+
+#join .go-term {
+  float: right;
+  opacity: .9;
+  cursor: pointer;
+}
+
+#join #terms {
+  width: 100%;
+  float: left;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #fff;
+}
+
+#setting > div {
+  margin-top: 80px;
+}
+
+#setting > div h2 {
+  margin-bottom: 40px;
+}
+
+#setting > div h3 {
+  font-size: 1.25em;
+  font-weight: 600;
+  border-bottom: 1px solid #000;
+  margin-bottom: 35px;
+  padding-bottom: 5px;
+}
+
+#setting > div .setting-form {
+  width: 100%;
+  float: left;
+  margin-bottom: 30px;
+}
+
+#setting > div .setting-form .left {
+  width: 140px;
+  text-align: center;
+}
+
+#setting > div .setting-form .left .profile-img {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 140px;
+  height: 140px;
+  border-radius: 140px;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+}
+
+#setting > div .setting-form .left #profile-img {
+  display: none;
+}
+
+#setting > div .setting-form .left .btn {
+  margin-top: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+#setting > div .setting-form .right {
+  width: 570px;
+}
+
+#setting > div .setting-form .right label {
+  font-weight: 600;
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+}
+
+#setting > div .setting-form .right .email, #setting > div .setting-form .right input, #setting > div .setting-form .right textarea {
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#setting > div .setting-form .right input, #setting > div .setting-form .right textarea {
+  border: 1px solid #ccc;
+  padding: 15px 20px;
+}
+
+#setting > div .btn-wrap {
+  width: 100%;
+  float: left;
+  position: relative;
+}
+
+#setting > div .btn-wrap .save-btn {
+  padding: 15px 90px;
+  display: block;
+  margin: 0 auto;
+}
+
+#setting > div .btn-wrap .secession-btn {
+  position: absolute;
+  color: #666;
+  right: 0;
+  top: 15px;
+}
+/*# sourceMappingURL=user.css.map */
+
+
+
+

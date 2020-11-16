@@ -1,0 +1,49 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.0.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+//runtime("org.springframework.boot:spring-boot-properties-migrator")
+
+group = 'com.websocket'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+//    compile 'org.springframework.boot:spring-boot-starter-actuator:2.3.5.RELEASE'
+
+
+    // embedded-redis
+    implementation 'it.ozimov:embedded-redis:0.7.2'
+
+    // db driver
+    compile 'org.mariadb.jdbc:mariadb-java-client:2.6.2'
+//    compile "org.mongodb:mongo-java-driver:3.10.1"
+
+    // javers
+    compile 'org.javers:javers-spring-boot-starter-mongo:5.13.2'
+    compile 'org.javers:javers-persistence-mongo:5.13.2'
+
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'javax.xml.bind:jaxb-api'
+
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}

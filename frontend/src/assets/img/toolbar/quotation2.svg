@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+  <g id="그룹_255" data-name="그룹 255" transform="translate(-574 -296)">
+    <g id="사각형_60" data-name="사각형 60" transform="translate(574 296)" fill="rgba(255,255,255,0)" stroke="#333" stroke-width="1">
+      <rect width="22" height="22" stroke="none"/>
+      <rect x="0.5" y="0.5" width="21" height="21" fill="none"/>
+    </g>
+    <text id="T" transform="translate(581 312)" font-size="12" font-family="NanumMyeongjoExtraBold, NanumMyeongjo"><tspan x="0" y="0">T</tspan></text>
+  </g>
+</svg>

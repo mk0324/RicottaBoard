@@ -1,0 +1,21 @@
+<svg id="user" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+    <defs>
+        <style>
+            .cls-1 {
+            fill: #333;
+            }
+
+            .cls-2 {
+            fill: #fff;
+            }
+        </style>
+    </defs>
+    <g id="그룹_4" data-name="그룹 4">
+        <circle id="타원_1" data-name="타원 1" class="cls-1" cx="25" cy="25" r="25"/>
+    </g>
+    <circle id="타원_57" data-name="타원 57" class="cls-2" cx="11.667" cy="11.667" r="11.667" transform="translate(13.333 10)"/>
+    <path id="패스_306" data-name="패스 306" class="cls-2" d="M9.333-.093c4.6,0,13.333,5.263,13.333,9.865s-8.731,6.64-13.333,6.64S-4,14.375-4,9.773,4.731-.093,9.333-.093Z" transform="translate(15.667 29.938)"/>
+    <circle id="타원_58" data-name="타원 58" class="cls-1" cx="1.667" cy="1.667" r="1.667" transform="translate(18.889 18.889)"/>
+    <path id="패스_307" data-name="패스 307" class="cls-1" d="M2.52.164c.92,0,3.865-.92,3.865,0S3.44,3.5,2.52,3.5-1.28,1.084-1.28.164,1.6.164,2.52.164Z" transform="translate(22.48 24.836)"/>
+    <circle id="타원_59" data-name="타원 59" class="cls-1" cx="1.667" cy="1.667" r="1.667" transform="translate(28.889 18.889)"/>
+</svg>
